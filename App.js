@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AppStateComponent } from './AppState';
 import QrCodeScreen from './QRpage';
 
 function HomeScreen({navigation}) {
@@ -24,6 +25,7 @@ function App() {
     <SafeAreaProvider>
       <RecoilRoot>
         <NavigationContainer>
+          <AppStateComponent />
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Barcode" component={QrCodeScreen} />
